@@ -16,13 +16,13 @@ function playerSelection() {
   let choice = prompt("Rock, Paper or Scissors?");
   if (choice === "Rock") {
     console.log("You chose Rock!");
-    return 0;
+    return "Rock";
   } else if (choice === "Paper") {
     console.log("You chose Paper!");
-    return 1;
+    return "Paper";
   } else if (choice === "Scissors") {
     console.log("You chose Scissors!");
-    return 2;
+    return "Scissors";
   } else {
     alert("Please choose Rock, Paper, or Scissors!");
   }
