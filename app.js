@@ -9,9 +9,6 @@ function computerPlay() {
   }
 }
 
-const playerSelection = prompt("Rock, Paper or Scissors?")?.toLowerCase();
-const computerSelection = computerPlay();
-
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     return "Nobody wins! Tied!";
@@ -30,4 +27,12 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = prompt("Rock, Paper or Scissors?")?.toLowerCase();
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+}
+
+game();
