@@ -12,21 +12,8 @@ function computerPlay() {
   }
 }
 
-function playerSelection() {
-  const choice = prompt("Rock, Paper or Scissors?").toLowerCase();
-  if (choice === "rock") {
-    console.log("You chose Rock!");
-    return "rock";
-  } else if (choice === "paper") {
-    console.log("You chose Paper!");
-    return "paper";
-  } else if (choice === "scissors") {
-    console.log("You chose Scissors!");
-    return "scissors";
-  } else {
-    alert("Please choose Rock, Paper, or Scissors!");
-  }
-}
+const playerSelection = prompt("Rock, Paper or Scissors?")?.toLowerCase();
+const computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
@@ -46,4 +33,4 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-playRound(playerSelection(), computerPlay());
+playRound(playerSelection, computerSelection);
