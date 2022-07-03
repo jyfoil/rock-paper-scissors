@@ -1,13 +1,10 @@
 function computerPlay() {
   const randomChoice = Math.floor(Math.random() * 3);
   if (randomChoice === 0) {
-    console.log("Computer chose Rock!");
     return "rock";
   } else if (randomChoice === 1) {
-    console.log("Computer chose Paper!");
     return "paper";
   } else {
-    console.log("Computer chose Scissors!");
     return "scissors";
   }
 }
