@@ -38,21 +38,21 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Rock, Paper or Scissors?")?.toLowerCase();
+    const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
     const computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
-    console.log(`Player score ${playerScore} Computer Score: ${computerScore}`);
+    console.log(
+      `Player score: ${playerScore} Computer Score: ${computerScore}`
+    );
 
     if (playerSelection === computerSelection) {
       i--;
     }
   }
   if (playerScore < computerScore) {
-    console.log("Computer wins");
+    console.log("Computer wins!");
   } else if (playerScore > computerScore) {
-    console.log("Player wins");
-  } else {
-    console.log("Tied!");
+    console.log("Player wins!");
   }
 }
 
