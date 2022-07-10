@@ -42,25 +42,3 @@ function playRound(playerSelection, computerSelection) {
     return 1;
   }
 }
-
-function game() {
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
-    const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-    console.log(
-      `Player score: ${playerScore} Computer Score: ${computerScore}`
-    );
-
-    if (playerSelection === computerSelection) {
-      i--;
-    }
-  }
-  if (playerScore < computerScore) {
-    console.log("Computer wins!");
-  } else if (playerScore > computerScore) {
-    console.log("Player wins!");
-  }
-}
-
-game();
