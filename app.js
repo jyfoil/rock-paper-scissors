@@ -11,37 +11,30 @@ function computerPlay() {
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    console.log("Nobody wins! Tied!");
     winner.textContent = "Nobody wins! Tied!";
     body.appendChild(winner);
   } else if (playerSelection === "rock" && computerSelection === "paper") {
     computerScore++;
-    console.log("You lose! Paper beats Rock!");
     winner.textContent = "You lose! Paper beats Rock!";
     body.appendChild(winner);
   } else if (playerSelection === "paper" && computerSelection === "scissors") {
     computerScore++;
-    console.log("You lose! Scissors beats Paper!");
     winner.textContent = "You lose! Scissors beats Paper!";
     body.appendChild(winner);
   } else if (playerSelection === "scissors" && computerSelection === "rock") {
     computerScore++;
-    console.log("You lose! Rock beats Scissors!");
     winner.textContent = "You lose! Rock beats Scissors!";
     body.appendChild(winner);
   } else if (playerSelection === "rock" && computerSelection === "scissors") {
     playerScore++;
-    console.log("You win! Rock beats scissors!");
     winner.textContent = "You win! Rock beats scissors!";
     body.appendChild(winner);
   } else if (playerSelection === "paper" && computerSelection === "rock") {
     playerScore++;
-    console.log("You win! Paper beats Rock!");
     winner.textContent = "You win! Paper beats Rock!";
     body.appendChild(winner);
   } else if (playerSelection === "scissors" && computerSelection === "paper") {
     playerScore++;
-    console.log("You win! Scissors beats Paper!");
     winner.textContent = "You win! Scissors beats Paper!";
     body.appendChild(winner);
   }
