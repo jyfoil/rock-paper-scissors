@@ -114,6 +114,11 @@ function resetGame() {
     rock.removeAttribute("disabled");
     paper.removeAttribute("disabled");
     scissors.removeAttribute("disabled");
+  } else {
+    playerScore = 0;
+    computerScore = 0;
+    body.removeChild(winner);
+    body.removeChild(scoreBoard);
   }
 }
 
