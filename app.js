@@ -42,9 +42,11 @@ function playRound(playerSelection, computerSelection) {
 
 const body = document.querySelector("body");
 const winner = document.createElement("div");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
 function game() {
-  const rock = document.querySelector(".rock");
   rock.addEventListener("click", () => {
     const computerSelection = computerPlay();
     playRound("rock", computerSelection);
@@ -52,14 +54,13 @@ function game() {
     tellWinner();
   });
 
-  const paper = document.querySelector(".paper");
   paper.addEventListener("click", () => {
     const computerSelection = computerPlay();
     playRound("paper", computerSelection);
     updateScore();
     tellWinner();
   });
-  const scissors = document.querySelector(".scissors");
+
   scissors.addEventListener("click", () => {
     const computerSelection = computerPlay();
     playRound("scissors", computerSelection);
@@ -84,10 +85,18 @@ function tellWinner() {
   if (playerScore === 5) {
     finalScore.textContent = "Player wins the game!";
     body.appendChild(finalScore);
+    disableBtn();
   } else if (computerScore === 5) {
     finalScore.textContent = "Computer wins the game!";
     body.appendChild(finalScore);
+    disableBtn();
   }
+}
+
+function disableBtn() {
+  rock.setAttribute("disabled", 1);
+  paper.setAttribute("disabled", 1);
+  scissors.setAttribute("disabled", 1);
 }
 
 game();
