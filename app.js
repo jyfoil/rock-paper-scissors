@@ -99,4 +99,22 @@ function disableBtn() {
   scissors.setAttribute("disabled", 1);
 }
 
+const reset = document.querySelector(".reset");
+reset.addEventListener("click", () => {
+  resetGame();
+});
+
+function resetGame() {
+  if (playerScore === 5 || computerScore === 5) {
+    playerScore = 0;
+    computerScore = 0;
+    body.removeChild(scoreBoard);
+    body.removeChild(finalScore);
+    body.removeChild(winner);
+    rock.removeAttribute("disabled");
+    paper.removeAttribute("disabled");
+    scissors.removeAttribute("disabled");
+  }
+}
+
 game();
