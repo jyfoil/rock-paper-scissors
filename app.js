@@ -49,6 +49,7 @@ function game() {
     const computerSelection = computerPlay();
     playRound("rock", computerSelection);
     updateScore();
+    tellWinner();
   });
 
   const paper = document.querySelector(".paper");
@@ -56,12 +57,14 @@ function game() {
     const computerSelection = computerPlay();
     playRound("paper", computerSelection);
     updateScore();
+    tellWinner();
   });
   const scissors = document.querySelector(".scissors");
   scissors.addEventListener("click", () => {
     const computerSelection = computerPlay();
     playRound("scissors", computerSelection);
     updateScore();
+    tellWinner();
   });
 }
 
@@ -73,6 +76,18 @@ const scoreBoard = document.createElement("div");
 function updateScore() {
   scoreBoard.textContent = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
   body.appendChild(scoreBoard);
+}
+
+const finalScore = document.createElement("div");
+
+function tellWinner() {
+  if (playerScore === 5) {
+    finalScore.textContent = "Player wins the game!";
+    body.appendChild(finalScore);
+  } else if (computerScore === 5) {
+    finalScore.textContent = "Computer wins the game!";
+    body.appendChild(finalScore);
+  }
 }
 
 game();
