@@ -1,7 +1,19 @@
-# rock-paper-scissors
+# Rock Paper Scissors
 
-Rock Paper Scissors game using JavaScript
+https://jyfoil.github.io/rock-paper-scissors/
 
-This project was my first use of JavaScript. This project is a rock, paper, scissors game using three buttons that will display the winner of each round. A scoreboard will be displayed depending on whether the player wins or the computer wins after each round, a tie will result in no update to the scoreboard. The game plays until first to five where it will display the final winner.
+## Project Description
 
-The project was made using a lot of function declarations, in these function declarations were conditionals to determine who would win depending on what the player chose and what the computer chose. Computer choice was randomized while player choice was determined by the button clicked. This was done by using 'addEventListener' that would wait for a button click to execute the arrow function. The round winner message, final winner message, and scoreboard were implemented using DOM manipulation to display the text.
+This project is a rock, paper, scissors game that will be played against a computer. The game will end when either the player or computer reaches 5 rounds won. With each round listing who won, a scoreboard that keeps track, and a message declaring the final winner of the game. The conditions in which the player wins or computer wins depends on the following:
+
+- Rock beats Scissors
+- Paper beats Rock
+- Scissors beats paper
+- Same choice results in a draw
+
+## Reflection
+
+One of my early concerns included whether to use function declarations or function expressions. I ended with using function delcarations so I could call use Hoisting.
+From there I had some trouble juggling all the different function declarations I had in the file and the abundance of conditionals. Looking back, it would have been ideal to use more function expressions for the functions I only called once.
+
+Using event listeners was fairly simple but I ran into trouble when I had to display a scoreboard that would update each round. The scoreboard would either not update or would not display. Eventually this was solved by putting the text content of the scoreboard into a function and calling it each button press to update it. Overall this was a excellent project to help me understand functions and especially DOM manipulation.
