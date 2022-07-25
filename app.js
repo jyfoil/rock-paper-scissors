@@ -1,3 +1,29 @@
+let playerScore = 0;
+let computerScore = 0;
+
+const body = document.querySelector("body");
+const winner = document.createElement("div");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
+const resetGame = document.querySelector(".reset");
+const scoreBoard = document.createElement("div");
+const finalScore = document.createElement("div");
+
+rock.addEventListener("click", () => {
+  playGame("rock");
+});
+
+paper.addEventListener("click", () => {
+  playGame("paper");
+});
+
+scissors.addEventListener("click", () => {
+  playGame("scissors");
+});
+
+resetGame.addEventListener("click", reset);
+
 function computerPlay() {
   const randomChoice = Math.floor(Math.random() * 3);
   if (randomChoice === 0) {
@@ -40,46 +66,17 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const body = document.querySelector("body");
-const winner = document.createElement("div");
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
-
-function game() {
-  rock.addEventListener("click", () => {
-    const computerSelection = computerPlay();
-    playRound("rock", computerSelection);
-    updateScore();
-    tellWinner();
-  });
-
-  paper.addEventListener("click", () => {
-    const computerSelection = computerPlay();
-    playRound("paper", computerSelection);
-    updateScore();
-    tellWinner();
-  });
-
-  scissors.addEventListener("click", () => {
-    const computerSelection = computerPlay();
-    playRound("scissors", computerSelection);
-    updateScore();
-    tellWinner();
-  });
+function playGame(btn) {
+  const computerSelection = computerPlay();
+  playRound(btn, computerSelection);
+  updateScore();
+  tellWinner();
 }
-
-let playerScore = 0;
-let computerScore = 0;
-
-const scoreBoard = document.createElement("div");
 
 function updateScore() {
   scoreBoard.textContent = `Player Score: ${playerScore} Computer Score: ${computerScore}`;
   body.appendChild(scoreBoard);
 }
-
-const finalScore = document.createElement("div");
 
 function tellWinner() {
   if (playerScore === 5) {
@@ -99,12 +96,7 @@ function disableBtn() {
   scissors.setAttribute("disabled", 1);
 }
 
-const reset = document.querySelector(".reset");
-reset.addEventListener("click", () => {
-  resetGame();
-});
-
-function resetGame() {
+function reset() {
   if (playerScore === 5 || computerScore === 5) {
     playerScore = 0;
     computerScore = 0;
@@ -121,5 +113,3 @@ function resetGame() {
     body.removeChild(scoreBoard);
   }
 }
-
-game();
